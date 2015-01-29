@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pavelrybakov.warehouse.CompanyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-01-29T03:29:33" hostname="pavelrybako-home" time="0.339">
+  <properties/>
+  <testcase name="testGetCompany" classname="com.pavelrybakov.warehouse.CompanyTest" time="0.339"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

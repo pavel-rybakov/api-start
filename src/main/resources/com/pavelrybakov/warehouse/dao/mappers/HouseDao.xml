@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="com.pavelrybakov.warehouse.dao.HouseDao">
+
+    <resultMap id="HouseMap" type="House">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="companyId" column="company_id"/>
+    </resultMap>
+
+    <select id="find"
+            parameterType="int"
+            resultMap="HouseMap">
+        SELECT * FROM house where id=#{id}
+    </select>
+
+    <select id="all"
+            resultType="House">
+        SELECT * FROM house
+    </select>
+
+    <insert id="insertHouse"
+            parameterType="House"
+            useGeneratedKeys="true"
+            keyProperty="id"
+            keyColumn="id">
+        INSERT INTO house(company_id, name) VALUES(#{companyId}, #{name})
+    </insert>
+
+    <update id="updateHouse"
+            parameterType="House">
+        UPDATE house
+        SET
+        name= #{name}
+        companyId= #{companyId}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteHouse"
+            parameterType="int">
+        DELETE FROM house WHERE id = #{id}
+    </delete>
+
+    <select id="findByCompanyId"
+            parameterType="int"
+            resultMap="HouseMap">
+        SELECT * FROM house WHERE company_id = #{id}
+    </select>
+
+</mapper>
